@@ -1,0 +1,6 @@
+framework module Pods_Till {
+  umbrella header "Pods-Till-umbrella.h"
+
+  export *
+  module * { export * }
+}
