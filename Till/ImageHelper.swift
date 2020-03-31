@@ -13,11 +13,11 @@ class ImageHelper: UIViewController {
     public func saveImage(image: UIImage) -> String {
         let hash =  NSUUID().uuidString
 
-        if let data = image.pngData() {
-                let filename = getDocumentsDirectory().appendingPathComponent("\(hash).png")
+        if let data = image.jpegData(compressionQuality: 0.8) {
+                let filename = getDocumentsDirectory().appendingPathComponent("\(hash).jpeg")
                 try? data.write(to: filename)
             }
-        return "\(hash).png"
+        return "\(hash).jpeg"
     }
     
     func getDocumentsDirectory() -> URL {

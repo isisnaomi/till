@@ -11,10 +11,13 @@ import SwiftUI
 
 struct EditView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-    @State private var name: String = ""
-    @State private var date = Date()
+    @State private var id: String
+    @State private var name: String
+    @State private var date: Date
     @State var showImagePicker: Bool = false
+    @State var showUnsplashPicker: Bool = false
     @State var image: UIImage?
+    @State var imagePicked: Bool = false
     private var box: Event?
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var currentColorScheme: ColorScheme
@@ -27,9 +30,10 @@ struct EditView: View {
     
     init(box: Event) {
         self.box = box
-        self.name = box.name ?? ""
-        self.date = box.date ?? Date()
-        self.image = UIImage(named: box.image!)
+        _id = State(initialValue: box.id!)
+        _name = State(initialValue: box.name!)
+        _date = State(initialValue: box.date!)
+        _image = State(initialValue: ImageHelper().getSavedImage(named: box.image!))
     }
     
     var colorScheme: ColorScheme {
@@ -42,23 +46,21 @@ struct EditView: View {
     
     var body: some View {
         ZStack {
-            //Color.yellow
-            //.edgesIgnoringSafeArea(.all)
             GeometryReader { geometry in
                 if self.image != nil {
                     Image(uiImage: self.image!)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(self.image!.size, contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
                         .frame(maxWidth: geometry.size.width,
                                maxHeight: geometry.size.height)
-                    Color.gray.opacity(0.4).cornerRadius(10)
+                    Color.black.opacity(0.4).cornerRadius(10)
                 }
             }
             VStack {
                 TextField("Add a title", text: $name)
                     .font(.largeTitle)
-                DatePicker.init("Date", selection: $date , in: Date()... , displayedComponents: .date)
+                DatePicker.init("", selection: $date , in: Date()... , displayedComponents: .date).labelsHidden()
                 Button(action: {
                     withAnimation {
                         self.showImagePicker.toggle()
@@ -66,25 +68,33 @@ struct EditView: View {
                 }) {
                     HStack {
                         Image.init(systemName: "camera").foregroundColor(.primary)
-                        Text("Add an image").foregroundColor(.primary)
-                    }
+                        Text("Edit image").foregroundColor(.primary)
+                    }.padding()
                 }
-                Button(action:  {
-                    let imageSaved = self.image != nil ? ImageHelper().saveImage(image: self.image!) : ImageHelper().saveImage(image: ImageHelper().getRandomDefaultImage())
-                    let newEvent = Event.init(context: self.managedObjectContext)
-                    newEvent.image = imageSaved
-                    newEvent.name = self.name
-                    newEvent.date = self.date
-                    newEvent.id = "\(UUID())"
-                    do {
-                        try self.managedObjectContext.save()
-                        self.presentationMode.wrappedValue.dismiss()
-                    } catch {
-                        print(error)
+                Button(action: {
+                    withAnimation {
+                        self.showUnsplashPicker.toggle()
                     }
                 }) {
+                    HStack {
+                        Image.init(systemName: "camera").foregroundColor(.primary)
+                        Text("Add an from Unsplash").foregroundColor(.primary)
+                    }.padding()
+                }
+                Button(action:  {
+                    self.managedObjectContext.performAndWait {
+                        if self.imagePicked {
+                            let imageSaved = self.image != nil ? ImageHelper().saveImage(image: self.image!) : ImageHelper().saveImage(image: ImageHelper().getRandomDefaultImage())
+                             self.box!.image = imageSaved
+                        }
+                        self.box!.name = self.name
+                        self.box!.date = self.date
+                        try? self.managedObjectContext.save()
+                    }
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
                     HStack{
-                        Text("Add new event").foregroundColor(.primary).colorInvert()
+                        Text("Edit event").foregroundColor(.primary).colorInvert()
                     }.padding()
                     .cornerRadius(10)
                     .background(Color.primary)
@@ -92,7 +102,12 @@ struct EditView: View {
             }.padding()
             VStack {
                 if (showImagePicker) {
-                    OpenGallary(isShown: $showImagePicker, image: $image)
+                    OpenGallary(isShown: $showImagePicker, image: $image, imagePicked: $imagePicked)
+                }
+            }
+            VStack {
+                if (showUnsplashPicker) {
+                    UnsplashGallary(isShown: $showUnsplashPicker, image: $image, imagePicked: $imagePicked)
                 }
             }
         }.colorScheme(colorScheme)

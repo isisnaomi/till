@@ -6,4 +6,5 @@ target 'Till' do
   use_frameworks!
 
   # Pods for Till
+  pod 'UnsplashPhotoPicker', '~> 1.1'
 end

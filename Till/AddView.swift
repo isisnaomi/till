@@ -14,6 +14,8 @@ struct AddView: View {
     @State private var name: String = ""
     @State private var date = Date()
     @State var showImagePicker: Bool = false
+    @State var showUnsplashPicker: Bool = false
+    @State var imagePicked: Bool = false
     @State var image: UIImage?
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var currentColorScheme: ColorScheme
@@ -40,28 +42,40 @@ struct AddView: View {
                 if self.image != nil {
                     Image(uiImage: self.image!)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(self.image!.size, contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
                         .frame(maxWidth: geometry.size.width,
                                maxHeight: geometry.size.height)
-                    Color.gray.opacity(0.4).cornerRadius(10)
+                    Color.black.opacity(0.4).cornerRadius(10)
                 }
             }
             VStack {
                 TextField("Add a title", text: $name)
                     .font(.largeTitle)
-                DatePicker.init("Date", selection: $date , in: Date()... , displayedComponents: .date)
+                DatePicker.init("", selection: $date , in: Date.init(timeIntervalSince1970: 0)... , displayedComponents: .date).labelsHidden()
                 Button(action: {
                     withAnimation {
                         self.showImagePicker.toggle()
                     }
                 }) {
+
                     HStack {
                         Image.init(systemName: "camera").foregroundColor(.primary)
                         Text("Add an image").foregroundColor(.primary)
+                    }.padding()
+                }
+                Button(action: {
+                    withAnimation {
+                        self.showUnsplashPicker.toggle()
                     }
+                }) {
+                    HStack {
+                        Image.init(systemName: "camera").foregroundColor(.primary)
+                        Text("Add an from Unsplash").foregroundColor(.primary)
+                    }.padding()
                 }
                 Button(action:  {
+                    self.disabled(true)
                     let imageSaved = self.image != nil ? ImageHelper().saveImage(image: self.image!) : ImageHelper().saveImage(image: ImageHelper().getRandomDefaultImage())
                     let newEvent = Event.init(context: self.managedObjectContext)
                     newEvent.image = imageSaved
@@ -84,7 +98,12 @@ struct AddView: View {
             }.padding()
             VStack {
                 if (showImagePicker) {
-                    OpenGallary(isShown: $showImagePicker, image: $image)
+                    OpenGallary(isShown: $showImagePicker, image: $image, imagePicked: $imagePicked)
+                }
+            }
+            VStack {
+                if (showUnsplashPicker) {
+                    UnsplashGallary(isShown: $showUnsplashPicker, image: $image, imagePicked: $imagePicked)
                 }
             }
         }.colorScheme(colorScheme)

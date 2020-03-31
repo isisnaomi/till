@@ -11,9 +11,12 @@ import SwiftUI
 
 struct EventView: View {
     private var box: Event?
+    private var image: UIImage
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var scale: CGSize = CGSize.init(width: 1, height: 1)
-    
+    @State var showingEdit = false
+
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -22,15 +25,16 @@ struct EventView: View {
     
     init(box: Event) {
         self.box = box
+        self.image = ImageHelper().getSavedImage(named:box.image!)!
     }
     
     var body: some View {
-        ZStack (alignment: Alignment.init(horizontal: .leading, vertical: .bottom)) {
+        ZStack(alignment: Alignment.init(horizontal: .leading, vertical: .bottom)) {
             GeometryReader { geometry in
                 if self.box!.image != nil {
-                    Image(uiImage: ImageHelper().getSavedImage(named:self.box!.image!)!)
+                    Image(uiImage: self.image)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(self.image.size, contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
                         .frame(maxWidth: geometry.size.width,
                                maxHeight: geometry.size.height)
@@ -44,9 +48,31 @@ struct EventView: View {
                 }
             }
             
-            Color.gray.opacity(0.4).cornerRadius(10).edgesIgnoringSafeArea(.all)
-
-            VStack (alignment: .leading) {
+            Color.black.opacity(0.4).cornerRadius(10).edgesIgnoringSafeArea(.all)
+               VStack (alignment: .leading) {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        self.showingEdit.toggle()
+                    }) {
+                        Image("iconEdit")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30, alignment: .center)
+                    }
+                    Button(action: {
+                        InstagramManager().postImageToInstagramWithCaption(imageInstagram: self.image, event: self.box!, view: UIView())
+                    }) {
+                        Image("iconInsta")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 32, height: 32, alignment: .center)
+                    }
+                    .sheet(isPresented: self.$showingEdit) {
+                        EditView(box: self.box!).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+                    }
+                }
+                Spacer()
                 Text("\(box!.daysUntil())")
                     .font(.largeTitle)
                     .foregroundColor(.white)
@@ -57,9 +83,9 @@ struct EventView: View {
                 Text("\(box!.date!, formatter: Self.taskDateFormat)")
                     .font(.subheadline)
                     .foregroundColor(.white)
-            }.padding()
-            
+               }.padding()
         }
+        
         
     }
 }

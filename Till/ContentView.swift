@@ -11,10 +11,11 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: Event.getAllEvents()) var events: FetchedResults<Event>
+    @State private var refreshing = UUID()
+    private var didSave =  NotificationCenter.default.publisher(for: .NSManagedObjectContextObjectsDidChange)
     
     @State var showingAdd = false
     @State var showingPreview = false
-    @State var showingEdit = false
     @State private var presented_obj: Event?
 
     var body: some View {
@@ -22,20 +23,9 @@ struct ContentView: View {
             ScrollView {
                 if events.count != 0 {
                     VStack {
-                        
                         ForEach(events) { box in
-                            BoxView(box: box).contextMenu {
+                            BoxView(box: box, s: self.refreshing).contextMenu {
                                 VStack {
-                                    Button(action: {
-                                        self.showingEdit.toggle()
-                                        self.presented_obj = box
-                                    }) {
-                                        HStack {
-                                            Text("Edit")
-                                            Image(systemName: "pencil")
-                                        }
-                                    }
-                                    
                                     Button(action: {
                                         self.managedObjectContext.delete(box)
                                     }) {
@@ -52,7 +42,9 @@ struct ContentView: View {
                                         self.presented_obj = box
                                 }
                             ).sheet(isPresented: self.$showingPreview) {
-                                EventView(box: self.presented_obj!)
+                                EventView(box: self.presented_obj!).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+                            }.onReceive(self.didSave) { _ in
+                                self.refreshing = UUID()
                             }
                         }
                         
@@ -79,9 +71,11 @@ struct ContentView: View {
             }).sheet(isPresented: $showingAdd) {
                 AddView().environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
             }
-        }
+            
+        }.navigationViewStyle(StackNavigationViewStyle())
+
     }
-}
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -90,3 +84,4 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
+}

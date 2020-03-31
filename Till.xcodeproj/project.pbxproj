@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		C40379CA235A396000F64867 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40379C9235A396000F64867 /* AddView.swift */; };
 		C40379CC235A3A0B00F64867 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40379CB235A3A0B00F64867 /* BoxView.swift */; };
 		C452E837235E4E4200FDBC5B /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E836235E4E4200FDBC5B /* EditView.swift */; };
+		C452E83D235FAABB00FDBC5B /* UnsplashPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */; };
 		C4B5F146235933C300182891 /* Till.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F144235933C300182891 /* Till.xcdatamodeld */; };
 		C4B5F1482359345000182891 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F1472359345000182891 /* Event.swift */; };
 		C4D11076235AAD2800C2984A /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D11075235AAD2800C2984A /* EventView.swift */; };
@@ -22,6 +23,9 @@
 		C4DB30E42357DFF900EE6663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4DB30E32357DFF900EE6663 /* Assets.xcassets */; };
 		C4DB30E72357DFF900EE6663 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4DB30E62357DFF900EE6663 /* Preview Assets.xcassets */; };
 		C4DB30EA2357DFF900EE6663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4DB30E82357DFF900EE6663 /* LaunchScreen.storyboard */; };
+		C4DF2D8A2432C24000A0C772 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF2D892432C23F00A0C772 /* InstagramManager.swift */; };
+		C4DF2D8C2432C6D500A0C772 /* InstagramStory.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DF2D8B2432C6D500A0C772 /* InstagramStory.xib */; };
+		C4DF2D8E2432C79900A0C772 /* InstagramStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF2D8D2432C79900A0C772 /* InstagramStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,7 @@
 		C40379C9235A396000F64867 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		C40379CB235A3A0B00F64867 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		C452E836235E4E4200FDBC5B /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPickerViewController.swift; sourceTree = "<group>"; };
 		C4B5F145235933C300182891 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C4B5F1472359345000182891 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C4D11075235AAD2800C2984A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		C4DB30E62357DFF900EE6663 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C4DB30E92357DFF900EE6663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4DB30EB2357DFF900EE6663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4DF2D892432C23F00A0C772 /* InstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
+		C4DF2D8B2432C6D500A0C772 /* InstagramStory.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstagramStory.xib; sourceTree = "<group>"; };
+		C4DF2D8D2432C79900A0C772 /* InstagramStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C43108B92395CC7500325A29 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4DF2D892432C23F00A0C772 /* InstagramManager.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C4DB30D12357DFF700EE6663 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +112,7 @@
 		C4DB30DC2357DFF700EE6663 /* Till */ = {
 			isa = PBXGroup;
 			children = (
+				C43108B92395CC7500325A29 /* Extensions */,
 				C4DB30DD2357DFF700EE6663 /* AppDelegate.swift */,
 				C4DB30DF2357DFF700EE6663 /* SceneDelegate.swift */,
 				C4DB30E12357DFF700EE6663 /* ContentView.swift */,
@@ -111,6 +128,9 @@
 				C40379CB235A3A0B00F64867 /* BoxView.swift */,
 				C4D11075235AAD2800C2984A /* EventView.swift */,
 				C452E836235E4E4200FDBC5B /* EditView.swift */,
+				C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */,
+				C4DF2D8B2432C6D500A0C772 /* InstagramStory.xib */,
+				C4DF2D8D2432C79900A0C772 /* InstagramStory.swift */,
 			);
 			path = Till;
 			sourceTree = "<group>";
@@ -134,6 +154,7 @@
 				C4DB30D62357DFF700EE6663 /* Sources */,
 				C4DB30D72357DFF700EE6663 /* Frameworks */,
 				C4DB30D82357DFF700EE6663 /* Resources */,
+				C184B9337FF7A1037F49D050 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +205,7 @@
 			files = (
 				C4DB30EA2357DFF900EE6663 /* LaunchScreen.storyboard in Resources */,
 				C4DB30E72357DFF900EE6663 /* Preview Assets.xcassets in Resources */,
+				C4DF2D8C2432C6D500A0C772 /* InstagramStory.xib in Resources */,
 				C4DB30E42357DFF900EE6663 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +235,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C184B9337FF7A1037F49D050 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Till/Pods-Till-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Till/Pods-Till-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Till/Pods-Till-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -220,10 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4DF2D8E2432C79900A0C772 /* InstagramStory.swift in Sources */,
 				C4DB30DE2357DFF700EE6663 /* AppDelegate.swift in Sources */,
 				C4DB30E02357DFF700EE6663 /* SceneDelegate.swift in Sources */,
 				C452E837235E4E4200FDBC5B /* EditView.swift in Sources */,
 				C4DB30E22357DFF700EE6663 /* ContentView.swift in Sources */,
+				C452E83D235FAABB00FDBC5B /* UnsplashPickerViewController.swift in Sources */,
+				C4DF2D8A2432C24000A0C772 /* InstagramManager.swift in Sources */,
 				C4B5F146235933C300182891 /* Till.xcdatamodeld in Sources */,
 				C40379CA235A396000F64867 /* AddView.swift in Sources */,
 				C40379C623594C5100F64867 /* OpenGallary.swift in Sources */,
@@ -298,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -352,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -368,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Till/Preview Content\"";
 				DEVELOPMENT_TEAM = KPNMCQ7J3G;
 				ENABLE_PREVIEWS = YES;
@@ -389,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Till/Preview Content\"";
 				DEVELOPMENT_TEAM = KPNMCQ7J3G;
 				ENABLE_PREVIEWS = YES;
