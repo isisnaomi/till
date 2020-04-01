@@ -14,15 +14,27 @@ struct AddView: View {
     @State private var name: String = ""
     @State private var date = Date()
     @State var showImagePicker: Bool = false
+    @State var showDatePicker: Bool = false
+    @State var showHourPicker: Bool = false
     @State var showUnsplashPicker: Bool = false
     @State var imagePicked: Bool = false
     @State var image: UIImage?
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var currentColorScheme: ColorScheme
+    @State private var createEventCalendar = true
+    @State private var isAllDay = true
+    @State var dateText: String = ""
 
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
+        return formatter
+    }
+    
+    var hourFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "HH:mm:ss"
         return formatter
     }
     
@@ -36,8 +48,6 @@ struct AddView: View {
     
     var body: some View {
         ZStack {
-            //Color.yellow
-            //.edgesIgnoringSafeArea(.all)
               GeometryReader { geometry in
                 if self.image != nil {
                     Image(uiImage: self.image!)
@@ -49,63 +59,116 @@ struct AddView: View {
                     Color.black.opacity(0.4).cornerRadius(10)
                 }
             }
-            VStack {
-                TextField("Add a title", text: $name)
-                    .font(.largeTitle)
-                DatePicker.init("", selection: $date , in: Date.init(timeIntervalSince1970: 0)... , displayedComponents: .date).labelsHidden()
-                Button(action: {
-                    withAnimation {
-                        self.showImagePicker.toggle()
+            
+                VStack {
+                    //Title
+                    TextField("Add a title", text: $name)
+                        .font(.largeTitle)
+                    //Toggles
+                    Toggle(isOn: $isAllDay) {
+                        Text("All day")
                     }
-                }) {
+                    //Pickers
+                    Button(action: {
+                        withAnimation {
+                            self.showDatePicker.toggle()
+                            self.showHourPicker = false
+                        }
+                    }) {
+                        HStack {
+                            Text("Date").bold()
+                            Spacer()
+                            Text("\(date, formatter: dateFormatter)")
+                        }.padding()
+                    }
+                    if showDatePicker {
+                            DatePicker.init("", selection: $date , in: Date.init(timeIntervalSince1970: 0)... , displayedComponents: .date).labelsHidden()
+                        }
+                    if !isAllDay {
+                        Button(action: {
+                            withAnimation {
+                                self.showHourPicker.toggle()
+                                self.showDatePicker = false
+                            }
+                        }) {
+                            HStack {
+                                Text("Time").bold()
+                                Spacer()
+                                Text("\(date, formatter: hourFormatter)")
+                            }.padding()
+                        }
+                    }
+                    if showHourPicker {
+                        DatePicker.init("", selection: $date , in: Date.init(timeIntervalSince1970: 0)... , displayedComponents: .hourAndMinute).labelsHidden()
+                    }
+                    
+                    Toggle(isOn: $createEventCalendar) {
+                        Text("Add event to iCal")
+                    }
 
-                    HStack {
-                        Image.init(systemName: "camera").foregroundColor(.primary)
-                        Text("Add an image").foregroundColor(.primary)
-                    }.padding()
-                }
-                Button(action: {
-                    withAnimation {
-                        self.showUnsplashPicker.toggle()
+                    
+                    //Add Image
+                    Button(action: {
+                        withAnimation {
+                            self.showImagePicker.toggle()
+                        }
+                    }) {
+                        HStack {
+                            Image.init(systemName: "camera").foregroundColor(.primary)
+                            Text("Add an image").foregroundColor(.primary)
+                        }
                     }
-                }) {
-                    HStack {
-                        Image.init(systemName: "camera").foregroundColor(.primary)
-                        Text("Add an from Unsplash").foregroundColor(.primary)
-                    }.padding()
-                }
-                Button(action:  {
-                    self.disabled(true)
-                    let imageSaved = self.image != nil ? ImageHelper().saveImage(image: self.image!) : ImageHelper().saveImage(image: ImageHelper().getRandomDefaultImage())
-                    let newEvent = Event.init(context: self.managedObjectContext)
-                    newEvent.image = imageSaved
-                    newEvent.name = self.name
-                    newEvent.date = self.date
-                    newEvent.id = "\(UUID())"
-                    do {
-                        try self.managedObjectContext.save()
-                        self.presentationMode.wrappedValue.dismiss()
-                    } catch {
-                        print(error)
+                    Button(action: {
+                        withAnimation {
+                            self.showUnsplashPicker.toggle()
+                        }
+                    }) {
+                        HStack {
+                            Image.init(systemName: "camera").foregroundColor(.primary)
+                            Text("Add image from Unsplash").foregroundColor(.primary)
+                        }
                     }
-                }) {
-                    HStack{
-                        Text("Add new event").foregroundColor(.primary).colorInvert()
-                    }.padding()
-                    .cornerRadius(10)
-                    .background(Color.primary)
-                }.padding()
-            }.padding()
-            VStack {
-                if (showImagePicker) {
-                    OpenGallary(isShown: $showImagePicker, image: $image, imagePicked: $imagePicked)
+                    
+                    //Submit
+                    Button(action:  {
+                        self.disabled(true)
+                        let imageSaved = self.image != nil ? ImageHelper().saveImage(image: self.image!) : ImageHelper().saveImage(image: ImageHelper().getRandomDefaultImage())
+                        let newEvent = Event.init(context: self.managedObjectContext)
+                        newEvent.image = imageSaved
+                        newEvent.name = self.name
+                        newEvent.date = self.date
+                        newEvent.id = "\(UUID())"
+                        CalendarManager().addEventToCalendar(title: self.name, description: nil, startDate: self.date, endDate: self.date, location: "Till") { (identifier, error) in
+                            if error == nil {
+                                newEvent.calendarEventIdentifier = identifier
+                            }
+                        }
+                        do {
+                            try self.managedObjectContext.save()
+                            self.presentationMode.wrappedValue.dismiss()
+                        } catch {
+                            print(error)
+                        }
+                    }) {
+                        HStack{
+                            Text("Add new event").foregroundColor(.primary).colorInvert()
+                        }.padding()
+                        .cornerRadius(10)
+                        .background(Color.primary)
+                    }
                 }
-            }
-            VStack {
-                if (showUnsplashPicker) {
-                    UnsplashGallary(isShown: $showUnsplashPicker, image: $image, imagePicked: $imagePicked)
+                VStack {
+                    if (showImagePicker) {
+                        OpenGallary(isShown: $showImagePicker, image: $image, imagePicked: $imagePicked)
+                    }
                 }
-            }
+                VStack {
+                    if (showUnsplashPicker) {
+                        UnsplashGallary(isShown: $showUnsplashPicker, image: $image, imagePicked: $imagePicked)
+                    }
+                }
+            
+
         }.colorScheme(colorScheme)
         
     }

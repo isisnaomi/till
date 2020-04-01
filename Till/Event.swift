@@ -15,6 +15,8 @@ public class Event: NSManagedObject, Identifiable {
     @NSManaged public var name: String?
     @NSManaged public var date: Date?
     @NSManaged public var image: String?
+    @NSManaged public var calendarEventIdentifier: String?
+    @NSManaged public var isAllDay: NSNumber
 
     public func daysUntil() -> String {
         let calendar = Calendar.current

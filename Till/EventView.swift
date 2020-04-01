@@ -16,6 +16,7 @@ struct EventView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var scale: CGSize = CGSize.init(width: 1, height: 1)
     @State var showingEdit = false
+    @State private var showingAlert = false
 
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
@@ -61,12 +62,15 @@ struct EventView: View {
                             .frame(width: 30, height: 30, alignment: .center)
                     }
                     Button(action: {
-                        InstagramManager().postImageToInstagramWithCaption(imageInstagram: self.image, event: self.box!, view: UIView())
+                        self.showingAlert = !InstagramManager().postImageToInstagramWithCaption(imageInstagram: self.image, event: self.box!, view: UIView())
                     }) {
                         Image("iconInsta")
                             .resizable()
                             .foregroundColor(.white)
                             .frame(width: 32, height: 32, alignment: .center)
+                    }
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Ups! Look like you don't have Instagram"), message: Text("Install Instagram to enjoy this feature and share your countdowns"), dismissButton: .default(Text("Got it!")))
                     }
                     .sheet(isPresented: self.$showingEdit) {
                         EditView(box: self.box!).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)

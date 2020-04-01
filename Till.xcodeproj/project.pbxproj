@@ -12,6 +12,7 @@
 		C40379C8235A394000F64867 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40379C7235A394000F64867 /* ImageHelper.swift */; };
 		C40379CA235A396000F64867 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40379C9235A396000F64867 /* AddView.swift */; };
 		C40379CC235A3A0B00F64867 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40379CB235A3A0B00F64867 /* BoxView.swift */; };
+		C40996FE2433FB7A008100DB /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40996FD2433FB7A008100DB /* CalendarManager.swift */; };
 		C452E837235E4E4200FDBC5B /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E836235E4E4200FDBC5B /* EditView.swift */; };
 		C452E83D235FAABB00FDBC5B /* UnsplashPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */; };
 		C4B5F146235933C300182891 /* Till.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F144235933C300182891 /* Till.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 		C40379C7235A394000F64867 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		C40379C9235A396000F64867 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		C40379CB235A3A0B00F64867 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		C40996FD2433FB7A008100DB /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		C452E836235E4E4200FDBC5B /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPickerViewController.swift; sourceTree = "<group>"; };
 		C4B5F145235933C300182891 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				C4DF2D892432C23F00A0C772 /* InstagramManager.swift */,
+				C40996FD2433FB7A008100DB /* CalendarManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				C4DF2D8A2432C24000A0C772 /* InstagramManager.swift in Sources */,
 				C4B5F146235933C300182891 /* Till.xcdatamodeld in Sources */,
 				C40379CA235A396000F64867 /* AddView.swift in Sources */,
+				C40996FE2433FB7A008100DB /* CalendarManager.swift in Sources */,
 				C40379C623594C5100F64867 /* OpenGallary.swift in Sources */,
 				C4B5F1482359345000182891 /* Event.swift in Sources */,
 				C40379C8235A394000F64867 /* ImageHelper.swift in Sources */,
