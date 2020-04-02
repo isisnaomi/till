@@ -26,6 +26,7 @@ struct EventView: View {
     
     init(box: Event) {
         self.box = box
+        debugPrint(box)
         self.image = ImageHelper().getSavedImage(named:box.image!)!
     }
     
@@ -76,7 +77,14 @@ struct EventView: View {
                         EditView(box: self.box!).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
                     }
                 }
+
                 Spacer()
+                if box!.calendarEventIdentifier != nil {
+                    Image.init(systemName: "calendar.circle")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 32, height: 32, alignment: .center)
+                }
                 Text("\(box!.daysUntil())")
                     .font(.largeTitle)
                     .foregroundColor(.white)

@@ -23,7 +23,6 @@ struct AddView: View {
     @Environment(\.colorScheme) var currentColorScheme: ColorScheme
     @State private var createEventCalendar = true
     @State private var isAllDay = true
-    @State var dateText: String = ""
 
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -63,11 +62,13 @@ struct AddView: View {
                 VStack {
                     //Title
                     TextField("Add a title", text: $name)
-                        .font(.largeTitle)
+                        .font(.largeTitle).padding()
+                    
                     //Toggles
                     Toggle(isOn: $isAllDay) {
                         Text("All day")
-                    }
+                    }.padding()
+                    
                     //Pickers
                     Button(action: {
                         withAnimation {
@@ -76,9 +77,9 @@ struct AddView: View {
                         }
                     }) {
                         HStack {
-                            Text("Date").bold()
+                            Text("Date").bold().foregroundColor(.primary)
                             Spacer()
-                            Text("\(date, formatter: dateFormatter)")
+                            Text("\(date, formatter: dateFormatter)").foregroundColor(.primary)
                         }.padding()
                     }
                     if showDatePicker {
@@ -92,9 +93,9 @@ struct AddView: View {
                             }
                         }) {
                             HStack {
-                                Text("Time").bold()
+                                Text("Time").bold().foregroundColor(.primary)
                                 Spacer()
-                                Text("\(date, formatter: hourFormatter)")
+                                Text("\(date, formatter: hourFormatter)").foregroundColor(.primary)
                             }.padding()
                         }
                     }
@@ -104,7 +105,7 @@ struct AddView: View {
                     
                     Toggle(isOn: $createEventCalendar) {
                         Text("Add event to iCal")
-                    }
+                    }.padding()
 
                     
                     //Add Image
@@ -137,26 +138,39 @@ struct AddView: View {
                         newEvent.image = imageSaved
                         newEvent.name = self.name
                         newEvent.date = self.date
+                        newEvent.isAllDay = self.isAllDay ? 1 : 0
                         newEvent.id = "\(UUID())"
-                        CalendarManager().addEventToCalendar(title: self.name, description: nil, startDate: self.date, endDate: self.date, location: "Till") { (identifier, error) in
-                            if error == nil {
-                                newEvent.calendarEventIdentifier = identifier
+                        if self.createEventCalendar {
+                            CalendarManager().addEventToCalendar(title: self.name, description: nil, startDate: self.date, endDate: self.date, location: "Till") { (identifier, error) in
+                                if error == nil {
+                                    newEvent.calendarEventIdentifier = identifier
+                                }
+                                do {
+                                    try self.managedObjectContext.save()
+                                     self.presentationMode.wrappedValue.dismiss()
+                                    } catch {
+                                     print(error)
+                                }
                             }
-                        }
-                        do {
-                            try self.managedObjectContext.save()
-                            self.presentationMode.wrappedValue.dismiss()
-                        } catch {
-                            print(error)
+                        } else {
+                            do {
+                                try self.managedObjectContext.save()
+                                self.presentationMode.wrappedValue.dismiss()
+                            } catch {
+                                print(error)
+                            }
                         }
                     }) {
                         HStack{
                             Text("Add new event").foregroundColor(.primary).colorInvert()
                         }.padding()
-                        .cornerRadius(10)
                         .background(Color.primary)
-                    }
+                        .cornerRadius(30)
+                    }.padding()
+                        
                 }
+            
+                //Image galleries
                 VStack {
                     if (showImagePicker) {
                         OpenGallary(isShown: $showImagePicker, image: $image, imagePicked: $imagePicked)

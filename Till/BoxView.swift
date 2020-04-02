@@ -43,6 +43,12 @@ struct BoxView: View {
                 }
                 VStack (alignment: .leading) {
                     Text((self.s) != nil ? "" : "")
+                        if box.calendarEventIdentifier != nil {
+                            Image.init(systemName: "calendar.circle")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 32, height: 32, alignment: .center)
+                        }
                         Text(box.name!)
                             .font(.largeTitle)
                             .foregroundColor(.white)

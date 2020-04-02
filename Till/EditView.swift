@@ -16,8 +16,12 @@ struct EditView: View {
     @State private var date: Date
     @State var showImagePicker: Bool = false
     @State var showUnsplashPicker: Bool = false
+    @State var showDatePicker: Bool = false
+    @State var showHourPicker: Bool = false
     @State var image: UIImage?
     @State var imagePicked: Bool = false
+    @State private var isAllDay = true
+    @State private var calendarEventIdentifier: String?
     private var box: Event?
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var currentColorScheme: ColorScheme
@@ -28,12 +32,21 @@ struct EditView: View {
         return formatter
     }
     
+    var hourFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateFormat = "HH:mm:ss"
+        return formatter
+    }
+    
     init(box: Event) {
         self.box = box
         _id = State(initialValue: box.id!)
         _name = State(initialValue: box.name!)
         _date = State(initialValue: box.date!)
         _image = State(initialValue: ImageHelper().getSavedImage(named: box.image!))
+        _isAllDay = State(initialValue: Bool(box.isAllDay))
+        _calendarEventIdentifier = State(initialValue: box.calendarEventIdentifier)
     }
     
     var colorScheme: ColorScheme {
@@ -60,7 +73,46 @@ struct EditView: View {
             VStack {
                 TextField("Add a title", text: $name)
                     .font(.largeTitle)
-                DatePicker.init("", selection: $date , in: Date()... , displayedComponents: .date).labelsHidden()
+                //Toggles
+                Toggle(isOn: $isAllDay) {
+                    Text("All day")
+                }.padding()
+                //Pickers
+                Button(action: {
+                    withAnimation {
+                        self.showDatePicker.toggle()
+                        self.showHourPicker = false
+                    }
+                }) {
+                    HStack {
+                        Text("Date").bold().foregroundColor(.primary)
+                        Spacer()
+                        Text("\(date, formatter: dateFormatter)").foregroundColor(.primary)
+                    }.padding()
+                }
+                if showDatePicker {
+                        DatePicker.init("", selection: $date , in: Date.init(timeIntervalSince1970: 0)... , displayedComponents: .date).labelsHidden()
+                    }
+                if !isAllDay {
+                    Button(action: {
+                        withAnimation {
+                            self.showHourPicker.toggle()
+                            self.showDatePicker = false
+                        }
+                    }) {
+                        HStack {
+                            Text("Time").bold().foregroundColor(.primary)
+                            Spacer()
+                            Text("\(date, formatter: hourFormatter)").foregroundColor(.primary)
+                        }.padding()
+                    }
+                }
+                
+                if showHourPicker {
+                    DatePicker.init("", selection: $date , in: Date.init(timeIntervalSince1970: 0)... , displayedComponents: .hourAndMinute).labelsHidden()
+                }
+                
+                //Add Image
                 Button(action: {
                     withAnimation {
                         self.showImagePicker.toggle()
@@ -68,8 +120,8 @@ struct EditView: View {
                 }) {
                     HStack {
                         Image.init(systemName: "camera").foregroundColor(.primary)
-                        Text("Edit image").foregroundColor(.primary)
-                    }.padding()
+                        Text("Add an image").foregroundColor(.primary)
+                    }
                 }
                 Button(action: {
                     withAnimation {
@@ -78,9 +130,10 @@ struct EditView: View {
                 }) {
                     HStack {
                         Image.init(systemName: "camera").foregroundColor(.primary)
-                        Text("Add an from Unsplash").foregroundColor(.primary)
-                    }.padding()
+                        Text("Add image from Unsplash").foregroundColor(.primary)
+                    }
                 }
+                //Submit
                 Button(action:  {
                     self.managedObjectContext.performAndWait {
                         if self.imagePicked {
@@ -89,6 +142,8 @@ struct EditView: View {
                         }
                         self.box!.name = self.name
                         self.box!.date = self.date
+                        self.box!.isAllDay = self.isAllDay ? 1 : 0
+                        //edit calendar event if exists according to new date
                         try? self.managedObjectContext.save()
                     }
                     self.presentationMode.wrappedValue.dismiss()
@@ -96,8 +151,9 @@ struct EditView: View {
                     HStack{
                         Text("Edit event").foregroundColor(.primary).colorInvert()
                     }.padding()
-                    .cornerRadius(10)
                     .background(Color.primary)
+                    .cornerRadius(30)
+                    
                 }.padding()
             }.padding()
             VStack {
