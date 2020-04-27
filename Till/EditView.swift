@@ -144,12 +144,18 @@ struct EditView: View {
                         self.box!.date = self.date
                         self.box!.isAllDay = self.isAllDay ? 1 : 0
                         //edit calendar event if exists according to new date
-                        try? self.managedObjectContext.save()
+                        CalendarManager().updateCalendarEvent(event: self.box!) { (identifier, error) in
+                            do {
+                                try self.managedObjectContext.save()
+                                 self.presentationMode.wrappedValue.dismiss()
+                                } catch {
+                                 print(error)
+                            }
+                        }
                     }
-                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     HStack{
-                        Text("Edit event").foregroundColor(.primary).colorInvert()
+                        Text("Save event").foregroundColor(.primary).colorInvert()
                     }.padding()
                     .background(Color.primary)
                     .cornerRadius(30)

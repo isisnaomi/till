@@ -19,7 +19,7 @@ struct BoxView: View {
     init(box: Event, s: UUID) {
         self.box = box
         _s = State(initialValue: s)
-        self.image = ImageHelper().getSavedImage(named:box.image!)!
+        self.image = ImageHelper().getSavedImage(named:box.image ?? "")!
     }
 
     static let taskDateFormat: DateFormatter = {

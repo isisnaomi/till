@@ -27,9 +27,12 @@ class ImageHelper: UIViewController {
     
     func getSavedImage(named: String) -> UIImage? {
         if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
-            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+            guard let image = UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path) else {
+                return getRandomDefaultImage()
+            }
+            return image
         }
-        return nil
+        return getRandomDefaultImage()
     }
     
     func getRandomDefaultImage() -> UIImage {

@@ -13,6 +13,7 @@
 		C40379CA235A396000F64867 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40379C9235A396000F64867 /* AddView.swift */; };
 		C40379CC235A3A0B00F64867 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40379CB235A3A0B00F64867 /* BoxView.swift */; };
 		C40996FE2433FB7A008100DB /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40996FD2433FB7A008100DB /* CalendarManager.swift */; };
+		C441B0F52437D94B00A1BDC8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441B0F42437D94B00A1BDC8 /* CloudKit.framework */; };
 		C452E837235E4E4200FDBC5B /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E836235E4E4200FDBC5B /* EditView.swift */; };
 		C452E83D235FAABB00FDBC5B /* UnsplashPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */; };
 		C4B5F146235933C300182891 /* Till.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F144235933C300182891 /* Till.xcdatamodeld */; };
@@ -38,6 +39,8 @@
 		C40379C9235A396000F64867 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		C40379CB235A3A0B00F64867 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		C40996FD2433FB7A008100DB /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		C441B0F32437D87700A1BDC8 /* Till.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Till.entitlements; sourceTree = "<group>"; };
+		C441B0F42437D94B00A1BDC8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C452E836235E4E4200FDBC5B /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPickerViewController.swift; sourceTree = "<group>"; };
 		C4B5F145235933C300182891 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BA0D9E816B703DAE5F4DA5 /* Pods_Till.framework in Frameworks */,
+				C441B0F52437D94B00A1BDC8 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +84,7 @@
 		2B934BAA73FEE04D3F39FABD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C441B0F42437D94B00A1BDC8 /* CloudKit.framework */,
 				591464C963A344AD0D82D531 /* Pods_Till.framework */,
 			);
 			name = Frameworks;
@@ -115,6 +120,7 @@
 		C4DB30DC2357DFF700EE6663 /* Till */ = {
 			isa = PBXGroup;
 			children = (
+				C441B0F32437D87700A1BDC8 /* Till.entitlements */,
 				C43108B92395CC7500325A29 /* Extensions */,
 				C4DB30DD2357DFF700EE6663 /* AppDelegate.swift */,
 				C4DB30DF2357DFF700EE6663 /* SceneDelegate.swift */,
@@ -413,8 +419,9 @@
 			baseConfigurationReference = 63929712306151C1AE0CE9B8 /* Pods-Till.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Till/Till.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Till/Preview Content\"";
 				DEVELOPMENT_TEAM = KPNMCQ7J3G;
 				ENABLE_PREVIEWS = YES;
@@ -423,6 +430,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isisnaomi.till.Till;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -435,8 +443,9 @@
 			baseConfigurationReference = 36A3352AFB43C0E83563C3DC /* Pods-Till.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Till/Till.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Till/Preview Content\"";
 				DEVELOPMENT_TEAM = KPNMCQ7J3G;
 				ENABLE_PREVIEWS = YES;
@@ -445,6 +454,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isisnaomi.till.Till;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

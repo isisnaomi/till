@@ -141,7 +141,7 @@ struct AddView: View {
                         newEvent.isAllDay = self.isAllDay ? 1 : 0
                         newEvent.id = "\(UUID())"
                         if self.createEventCalendar {
-                            CalendarManager().addEventToCalendar(title: self.name, description: nil, startDate: self.date, endDate: self.date, location: "Till") { (identifier, error) in
+                            CalendarManager().addEventToCalendar(title: self.name, description: nil, startDate: self.date, endDate: self.date, location: "Till", isAllDay: self.isAllDay) { (identifier, error) in
                                 if error == nil {
                                     newEvent.calendarEventIdentifier = identifier
                                 }
@@ -167,7 +167,6 @@ struct AddView: View {
                         .background(Color.primary)
                         .cornerRadius(30)
                     }.padding()
-                        
                 }
             
                 //Image galleries

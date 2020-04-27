@@ -22,18 +22,15 @@ public class Event: NSManagedObject, Identifiable {
         let calendar = Calendar.current
         
         guard let date = self.date else { return "undefined"}
-        let date1 = calendar.startOfDay(for: Date())
-        let date2 = calendar.startOfDay(for: date)
+        let date1 = Date()
+        let dateStart =  calendar.startOfDay(for: date1)
+        let date2 = date
 
-        let components = calendar.dateComponents([.day], from: date1, to: date2)
-        let day = components.day ?? 0
-        var verbose = ""
-        if day >= 0 {
-            verbose = abs(day) == 1 ? "day left" : "days left"
-        } else {
-            verbose = abs(day) == 1 ? "day ago" : "days ago"
-        }
-        return "\(abs(day)) \(verbose)"
+        let componentsDay = calendar.dateComponents([.day,], from: dateStart, to: date2)
+        let componentsHour = calendar.dateComponents([.hour, .minute], from: date1, to: date2)
+
+        var verbose = verboseCountDown(day: componentsDay.day!, hour: componentsHour.hour!, minutes: componentsHour.minute!)
+        return verbose
     }
     
     public func future() -> Bool {
@@ -48,6 +45,38 @@ public class Event: NSManagedObject, Identifiable {
         return day >= 0
     }
     
+    private func verboseCountDown(day: Int, hour: Int, minutes: Int) -> String {
+        if day == 0 {
+            if isAllDay.boolValue {
+                return "Today"
+            } else {
+                if hour == 0 {
+                    if minutes == 0 {
+                        return "Happening now"
+                    } else if minutes < 0 {
+                        return "\(abs(minutes)) minutes ago"
+                    } else {
+                        return "In \(minutes) minutes"
+                    }
+                } else if hour < 0 {
+                    return "\(abs(hour)) hours and \(abs(minutes)) minutes ago"
+                }
+                return "In \(hour) hours and \(minutes) minutes"
+            }
+        } else if day > 0 {
+            if abs(day) == 1 {
+                return "Tomorrow"
+            } else {
+                return "In \(abs(day)) days"
+            }
+        } else {
+            if abs(day) == 1 {
+                return "Yesterday"
+            } else {
+                return "\(abs(day)) days ago"
+            }
+        }
+    }
 }
 
 extension Event {

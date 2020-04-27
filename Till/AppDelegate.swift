@@ -33,14 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: NSPersistentCloudKitContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "Till")
+        let container = NSPersistentCloudKitContainer(name: "Till")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -61,9 +61,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
+    
+    static var managedContext: NSManagedObjectContext {
+        let context = AppDelegate().persistentContainer.viewContext
+        context.automaticallyMergesChangesFromParent = true
+        return context
+    }
 
     func saveContext () {
         let context = persistentContainer.viewContext
+
+        context.automaticallyMergesChangesFromParent = true
         if context.hasChanges {
             do {
                 try context.save()
