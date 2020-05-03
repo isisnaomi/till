@@ -20,14 +20,17 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
+            GeometryReader { geometry in
+
             ScrollView {
-                if events.count != 0 {
+                if self.events.count != 0 {
                     VStack {
-                        ForEach(events) { box in
+                        ForEach(self.events) { box in
                             BoxView(box: box, s: self.refreshing).contextMenu {
                                 VStack {
                                     Button(action: {
                                         self.managedObjectContext.delete(box)
+                                        try? self.managedObjectContext.save()
                                     }) {
                                         HStack {
                                             Text("Remove")
@@ -54,7 +57,11 @@ struct ContentView: View {
                             Image("iconEmpty").aspectRatio(contentMode: .fit).imageScale(.small)
                             Text("No events").font(.body)
                             Text("Add new events to preview them").font(.caption)
-                        }.padding()
+                    }
+                    .padding()
+                    .frame(width: geometry.size.width)
+                    .frame(minHeight: geometry.size.height)
+
                 }
 
             }
@@ -68,9 +75,11 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(.primary)
                 }
-            }).sheet(isPresented: $showingAdd) {
+            }).sheet(isPresented: self.$showingAdd) {
                 AddView().environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
             }
+        
+        }
             
         }.navigationViewStyle(StackNavigationViewStyle())
 

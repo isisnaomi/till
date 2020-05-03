@@ -80,10 +80,10 @@ struct EventView: View {
 
                 Spacer()
                 if box!.calendarEventIdentifier != nil {
-                    Image.init(systemName: "calendar.circle")
+                    Image.init(systemName: "calendar")
                     .resizable()
                     .foregroundColor(.white)
-                    .frame(width: 32, height: 32, alignment: .center)
+                    .frame(width: 20, height: 20, alignment: .center)
                 }
                 Text("\(box!.daysUntil())")
                     .font(.largeTitle)

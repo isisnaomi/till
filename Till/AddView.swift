@@ -167,7 +167,7 @@ struct AddView: View {
                         .background(Color.primary)
                         .cornerRadius(30)
                     }.padding()
-                }
+            }
             
                 //Image galleries
                 VStack {
