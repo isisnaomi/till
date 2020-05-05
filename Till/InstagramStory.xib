@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,7 +64,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="till" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-RQ-VSa">
-                    <rect key="frame" x="30" y="30" width="40" height="42"/>
+                    <rect key="frame" x="290" y="30" width="40" height="42"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="dJt-RQ-VSa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="54A-L6-nAQ"/>
+                <constraint firstItem="dJt-RQ-VSa" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-30" id="54A-L6-nAQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hq9-ga-PGR" secondAttribute="trailing" id="H5h-tY-svr"/>
                 <constraint firstItem="DyA-s0-e91" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HoG-F9-1nC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hq9-ga-PGR" secondAttribute="bottom" id="U87-tG-f1v"/>

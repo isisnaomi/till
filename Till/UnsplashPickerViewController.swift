@@ -30,32 +30,44 @@ struct  UnsplashGallary: UIViewControllerRepresentable {
         }
         
         func unsplashPhotoPicker(_ photoPicker: UnsplashPhotoPicker, didSelectPhotos photos: [UnsplashPhoto]) {
-            downloadPhoto(photos.first!)
-            self.isShown.wrappedValue = false
-            self.imagePicked.wrappedValue = true
+            downloadPhoto(photos.first!) { (success) in
+                self.imagePicked.wrappedValue = true
+                self.isShown.wrappedValue = false
+            }
         }
         
         func unsplashPhotoPickerDidCancel(_ photoPicker: UnsplashPhotoPicker) {
             isShown.wrappedValue = false
         }
         
-        func downloadPhoto(_ photo: UnsplashPhoto) {
-            
-            guard let url = photo.urls[.regular] else { return }
+        
+        func downloadPhoto(_ photo: UnsplashPhoto,  completion: @escaping (Bool) -> Void)  {
+            guard let url = photo.urls[.small] else {
+                completion(false)
+                return
+            }
 
             if let cachedResponse = UnsplashGallary.self.cache.cachedResponse(for: URLRequest(url: url)),
                 let image = UIImage(data: cachedResponse.data) {
                 self.image.wrappedValue = image
+                completion(true)
                 return
             }
 
             imageDataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
-                guard let strongSelf = self else { return }
+                guard let strongSelf = self else {
+                    completion(false)
+                    return
+                }
 
                 strongSelf.imageDataTask = nil
 
-                guard let data = data, let image = UIImage(data: data), error == nil else { return }
+                guard let data = data, let image = UIImage(data: data), error == nil else {
+                    completion(false)
+                    return
+                }
                 self!.image.wrappedValue = image
+                completion(true)
             }
 
             imageDataTask?.resume()

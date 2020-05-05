@@ -144,7 +144,16 @@ struct EditView: View {
                         self.box!.date = self.date
                         self.box!.isAllDay = self.isAllDay ? 1 : 0
                         //edit calendar event if exists according to new date
-                        CalendarManager().updateCalendarEvent(event: self.box!) { (identifier, error) in
+                        if self.box!.calendarEventIdentifier != nil {
+                            CalendarManager().updateCalendarEvent(event: self.box!) { (identifier, error) in
+                                do {
+                                    try self.managedObjectContext.save()
+                                     self.presentationMode.wrappedValue.dismiss()
+                                    } catch {
+                                     print(error)
+                                }
+                            }
+                        } else {
                             do {
                                 try self.managedObjectContext.save()
                                  self.presentationMode.wrappedValue.dismiss()
@@ -152,6 +161,7 @@ struct EditView: View {
                                  print(error)
                             }
                         }
+
                     }
                 }) {
                     HStack{
