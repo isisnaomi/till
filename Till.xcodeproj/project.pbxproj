@@ -16,6 +16,19 @@
 		C441B0F52437D94B00A1BDC8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C441B0F42437D94B00A1BDC8 /* CloudKit.framework */; };
 		C452E837235E4E4200FDBC5B /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E836235E4E4200FDBC5B /* EditView.swift */; };
 		C452E83D235FAABB00FDBC5B /* UnsplashPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */; };
+		C473535124678D7A00688821 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C473535024678D7A00688821 /* NotificationCenter.framework */; };
+		C473535424678D7A00688821 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473535324678D7A00688821 /* TodayViewController.swift */; };
+		C473535724678D7A00688821 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C473535524678D7A00688821 /* MainInterface.storyboard */; };
+		C473535B24678D7A00688821 /* Countdowns.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C473534F24678D7A00688821 /* Countdowns.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C4735361246790EF00688821 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4735360246790EF00688821 /* URL+Ext.swift */; };
+		C4735362246790EF00688821 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4735360246790EF00688821 /* URL+Ext.swift */; };
+		C47353632467911000688821 /* Till.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F144235933C300182891 /* Till.xcdatamodeld */; };
+		C47353642467923A00688821 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F1472359345000182891 /* Event.swift */; };
+		C47353652467956200688821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB30DD2357DFF700EE6663 /* AppDelegate.swift */; };
+		C473536824679FD800688821 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C473536724679FD800688821 /* EventCell.xib */; };
+		C473536924679FD800688821 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C473536724679FD800688821 /* EventCell.xib */; };
+		C473536B2467A17000688821 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473536A2467A17000688821 /* EventCell.swift */; };
+		C473536C2467A17000688821 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473536A2467A17000688821 /* EventCell.swift */; };
 		C4B5F146235933C300182891 /* Till.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F144235933C300182891 /* Till.xcdatamodeld */; };
 		C4B5F1482359345000182891 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5F1472359345000182891 /* Event.swift */; };
 		C4D11076235AAD2800C2984A /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D11075235AAD2800C2984A /* EventView.swift */; };
@@ -30,6 +43,30 @@
 		C4DF2D8E2432C79900A0C772 /* InstagramStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DF2D8D2432C79900A0C772 /* InstagramStory.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C473535924678D7A00688821 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4DB30D22357DFF700EE6663 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C473534E24678D7A00688821;
+			remoteInfo = Countdowns;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C473535C24678D7A00688821 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C473535B24678D7A00688821 /* Countdowns.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		36A3352AFB43C0E83563C3DC /* Pods-Till.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Till.release.xcconfig"; path = "Target Support Files/Pods-Till/Pods-Till.release.xcconfig"; sourceTree = "<group>"; };
 		591464C963A344AD0D82D531 /* Pods_Till.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Till.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +80,15 @@
 		C441B0F42437D94B00A1BDC8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C452E836235E4E4200FDBC5B /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		C452E83C235FAABB00FDBC5B /* UnsplashPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPickerViewController.swift; sourceTree = "<group>"; };
+		C473534F24678D7A00688821 /* Countdowns.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Countdowns.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C473535024678D7A00688821 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C473535324678D7A00688821 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C473535624678D7A00688821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C473535824678D7A00688821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4735360246790EF00688821 /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
+		C4735366246797D800688821 /* Countdowns.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Countdowns.entitlements; sourceTree = "<group>"; };
+		C473536724679FD800688821 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		C473536A2467A17000688821 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		C4B5F145235933C300182891 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C4B5F1472359345000182891 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C4D11075235AAD2800C2984A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -60,6 +106,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C473534C24678D7A00688821 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C473535124678D7A00688821 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4DB30D72357DFF700EE6663 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +140,7 @@
 			children = (
 				C441B0F42437D94B00A1BDC8 /* CloudKit.framework */,
 				591464C963A344AD0D82D531 /* Pods_Till.framework */,
+				C473535024678D7A00688821 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,14 +150,29 @@
 			children = (
 				C4DF2D892432C23F00A0C772 /* InstagramManager.swift */,
 				C40996FD2433FB7A008100DB /* CalendarManager.swift */,
+				C4735360246790EF00688821 /* URL+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C473535224678D7A00688821 /* Countdowns */ = {
+			isa = PBXGroup;
+			children = (
+				C4735366246797D800688821 /* Countdowns.entitlements */,
+				C473535324678D7A00688821 /* TodayViewController.swift */,
+				C473535524678D7A00688821 /* MainInterface.storyboard */,
+				C473535824678D7A00688821 /* Info.plist */,
+				C473536724679FD800688821 /* EventCell.xib */,
+				C473536A2467A17000688821 /* EventCell.swift */,
+			);
+			path = Countdowns;
 			sourceTree = "<group>";
 		};
 		C4DB30D12357DFF700EE6663 = {
 			isa = PBXGroup;
 			children = (
 				C4DB30DC2357DFF700EE6663 /* Till */,
+				C473535224678D7A00688821 /* Countdowns */,
 				C4DB30DB2357DFF700EE6663 /* Products */,
 				0579A87A9958568FCBC99EBD /* Pods */,
 				2B934BAA73FEE04D3F39FABD /* Frameworks */,
@@ -113,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				C4DB30DA2357DFF700EE6663 /* Till.app */,
+				C473534F24678D7A00688821 /* Countdowns.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +226,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C473534E24678D7A00688821 /* Countdowns */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C473535F24678D7A00688821 /* Build configuration list for PBXNativeTarget "Countdowns" */;
+			buildPhases = (
+				C473534B24678D7A00688821 /* Sources */,
+				C473534C24678D7A00688821 /* Frameworks */,
+				C473534D24678D7A00688821 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Countdowns;
+			productName = Countdowns;
+			productReference = C473534F24678D7A00688821 /* Countdowns.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C4DB30D92357DFF700EE6663 /* Till */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4DB30EE2357DFF900EE6663 /* Build configuration list for PBXNativeTarget "Till" */;
@@ -164,10 +252,12 @@
 				C4DB30D72357DFF700EE6663 /* Frameworks */,
 				C4DB30D82357DFF700EE6663 /* Resources */,
 				C184B9337FF7A1037F49D050 /* [CP] Embed Pods Frameworks */,
+				C473535C24678D7A00688821 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C473535A24678D7A00688821 /* PBXTargetDependency */,
 			);
 			name = Till;
 			productName = Till;
@@ -180,10 +270,13 @@
 		C4DB30D22357DFF700EE6663 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Isis Ramirez";
 				TargetAttributes = {
+					C473534E24678D7A00688821 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 					C4DB30D92357DFF700EE6663 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -203,15 +296,26 @@
 			projectRoot = "";
 			targets = (
 				C4DB30D92357DFF700EE6663 /* Till */,
+				C473534E24678D7A00688821 /* Countdowns */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C473534D24678D7A00688821 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C473536924679FD800688821 /* EventCell.xib in Resources */,
+				C473535724678D7A00688821 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4DB30D82357DFF700EE6663 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C473536824679FD800688821 /* EventCell.xib in Resources */,
 				C4DB30EA2357DFF900EE6663 /* LaunchScreen.storyboard in Resources */,
 				C4DB30E72357DFF900EE6663 /* Preview Assets.xcassets in Resources */,
 				C4DF2D8C2432C6D500A0C772 /* InstagramStory.xib in Resources */,
@@ -264,6 +368,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C473534B24678D7A00688821 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47353642467923A00688821 /* Event.swift in Sources */,
+				C473535424678D7A00688821 /* TodayViewController.swift in Sources */,
+				C4735362246790EF00688821 /* URL+Ext.swift in Sources */,
+				C47353652467956200688821 /* AppDelegate.swift in Sources */,
+				C473536C2467A17000688821 /* EventCell.swift in Sources */,
+				C47353632467911000688821 /* Till.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4DB30D62357DFF700EE6663 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,8 +390,10 @@
 				C4DB30E02357DFF700EE6663 /* SceneDelegate.swift in Sources */,
 				C452E837235E4E4200FDBC5B /* EditView.swift in Sources */,
 				C4DB30E22357DFF700EE6663 /* ContentView.swift in Sources */,
+				C473536B2467A17000688821 /* EventCell.swift in Sources */,
 				C452E83D235FAABB00FDBC5B /* UnsplashPickerViewController.swift in Sources */,
 				C4DF2D8A2432C24000A0C772 /* InstagramManager.swift in Sources */,
+				C4735361246790EF00688821 /* URL+Ext.swift in Sources */,
 				C4B5F146235933C300182891 /* Till.xcdatamodeld in Sources */,
 				C40379CA235A396000F64867 /* AddView.swift in Sources */,
 				C40996FE2433FB7A008100DB /* CalendarManager.swift in Sources */,
@@ -288,7 +407,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C473535A24678D7A00688821 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C473534E24678D7A00688821 /* Countdowns */;
+			targetProxy = C473535924678D7A00688821 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		C473535524678D7A00688821 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C473535624678D7A00688821 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		C4DB30E82357DFF900EE6663 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,6 +435,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C473535D24678D7A00688821 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Countdowns/Countdowns.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KPNMCQ7J3G;
+				INFOPLIST_FILE = Countdowns/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isisnaomi.till.Till.Countdowns;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C473535E24678D7A00688821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Countdowns/Countdowns.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KPNMCQ7J3G;
+				INFOPLIST_FILE = Countdowns/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.isisnaomi.till.Till.Countdowns;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C4DB30EC2357DFF900EE6663 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -418,10 +595,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63929712306151C1AE0CE9B8 /* Pods-Till.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Till/Till.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Till/Preview Content\"";
 				DEVELOPMENT_TEAM = KPNMCQ7J3G;
 				ENABLE_PREVIEWS = YES;
@@ -430,7 +608,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isisnaomi.till.Till;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -442,10 +620,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 36A3352AFB43C0E83563C3DC /* Pods-Till.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Till/Till.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Till/Preview Content\"";
 				DEVELOPMENT_TEAM = KPNMCQ7J3G;
 				ENABLE_PREVIEWS = YES;
@@ -454,7 +633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isisnaomi.till.Till;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -465,6 +644,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C473535F24678D7A00688821 /* Build configuration list for PBXNativeTarget "Countdowns" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C473535D24678D7A00688821 /* Debug */,
+				C473535E24678D7A00688821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C4DB30D52357DFF700EE6663 /* Build configuration list for PBXProject "Till" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

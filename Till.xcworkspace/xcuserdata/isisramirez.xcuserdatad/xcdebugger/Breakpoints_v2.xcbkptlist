@@ -50,75 +50,13 @@
             endingLineNumber = "24"
             landmarkName = "Coordinator"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "AFE216EB-18D0-46D7-9B33-3CF2767D6533 - 522cc890a9d8815a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Till.UnsplashGallary.Coordinator.(imageDataTask in _D7272BD6DABE9B5684FD030628F71A91).getter : Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/UnsplashPickerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "140">
-               </Location>
-               <Location
-                  uuid = "AFE216EB-18D0-46D7-9B33-3CF2767D6533 - 522cc890a9d8815a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Till.UnsplashGallary.Coordinator.(imageDataTask in _D7272BD6DABE9B5684FD030628F71A91).setter : Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/UnsplashPickerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "196">
-               </Location>
-               <Location
-                  uuid = "AFE216EB-18D0-46D7-9B33-3CF2767D6533 - 522cc890a9d8815a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Till.UnsplashGallary.Coordinator.(imageDataTask in _D7272BD6DABE9B5684FD030628F71A91).modify : Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/UnsplashPickerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "AFE216EB-18D0-46D7-9B33-3CF2767D6533 - 81f4e4c9c550bf93"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Till.UnsplashGallary.Coordinator.(imageDataTask in _D7272BD6DABE9B5684FD030628F71A91).modify : Swift.Optional&lt;__C.NSURLSessionDataTask&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/UnsplashPickerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0D0D01A4-CECB-4F10-AFD0-56B54E51DC40"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -134,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BBD28327-2E05-4682-B4FB-09AB382D2E84"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -150,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C357D7BA-3D93-401D-95F4-805E0A35E1CE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -166,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "21E88F37-2731-4F82-83D9-C23A16DEEBE3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -182,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6C856F0A-9451-4251-9520-4844612A1C54"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -198,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "20D6D6B7-1E2B-48FC-8A92-D568A9445E2C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -246,7 +184,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1E0681D9-ADC8-4932-8D5C-D38FCA2C3E97"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -262,7 +200,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D7DE5CDF-C065-42C6-8337-A14A958CD769"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -310,7 +248,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8668DC09-98C8-4C1D-9A2E-D9DC693FF94C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -326,7 +264,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8E05D1EC-1B5D-422D-B76B-DD577DDE62D4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -342,7 +280,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4A9CB573-60E4-4337-8C6A-5DBA1DA5A0CB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
@@ -432,53 +370,6 @@
             endingLineNumber = "57"
             landmarkName = "imageFromView(with:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "60C08109-3E04-49E8-B7E9-81779F125362 - cc66b8931af62af4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Till.InstagramManager.imageFromView(with: __C.UIView) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/Extensions/InstagramManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "284">
-               </Location>
-               <Location
-                  uuid = "60C08109-3E04-49E8-B7E9-81779F125362 - cc66b8931af62af4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Till.InstagramManager.imageFromView(with: __C.UIView) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/Extensions/InstagramManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "304">
-               </Location>
-               <Location
-                  uuid = "60C08109-3E04-49E8-B7E9-81779F125362 - 6cd2738160ae6554"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "$defer #1 () -&gt; () in Till.InstagramManager.imageFromView(with: __C.UIView) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/Extensions/InstagramManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "8">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -719,38 +610,6 @@
             endingLineNumber = "50"
             landmarkName = "updateCalendarEvent(event:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "095A61E8-29A1-4EED-8B56-8272B9A0E510 - d6706e6cd878a66e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Till.CalendarManager.updateCalendarEvent(event: Till.Event, completion: Swift.Optional&lt;(Swift.String, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/Extensions/CalendarManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  uuid = "095A61E8-29A1-4EED-8B56-8272B9A0E510 - 33ef291f5a289d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Till.CalendarManager.updateCalendarEvent(event: Till.Event, completion: Swift.Optional&lt;(Swift.String, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/Extensions/CalendarManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "536">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -911,38 +770,6 @@
             endingLineNumber = "56"
             landmarkName = "downloadPhoto(_:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "99832F15-AAF0-4E35-974A-52807DC9D9E7 - 70375af61b4bed1a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Till.UnsplashGallary.Coordinator.downloadPhoto(UnsplashPhotoPicker.UnsplashPhoto) -&gt; ()"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/UnsplashPickerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "1628">
-               </Location>
-               <Location
-                  uuid = "99832F15-AAF0-4E35-974A-52807DC9D9E7 - 86996579b4e2c776"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Till.UnsplashGallary.Coordinator.downloadPhoto(UnsplashPhotoPicker.UnsplashPhoto) -&gt; ()"
-                  moduleName = "Till"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisramirez/Code/Till/Till/UnsplashPickerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "232">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -974,6 +801,86 @@
             startingLineNumber = "62"
             endingLineNumber = "62"
             landmarkName = "downloadPhoto(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E42A96C5-E5DB-48E8-BF65-37BB55C91AAC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "doneBarButtonTapped(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E42A96C5-E5DB-48E8-BF65-37BB55C91AAC - c847db282ee1dcdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnsplashPhotoPicker.UnsplashPhotoPickerViewController.(doneBarButtonTapped in _076DE604DE71699B94A420F45A9DBE97)(sender: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "UnsplashPhotoPicker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/isisramirez/Code/Till/Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "E42A96C5-E5DB-48E8-BF65-37BB55C91AAC - e600d2670f1f4a20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;UnsplashPhotoPicker.UnsplashPhoto&gt;, Foundation.IndexPath) -&gt; Swift.Array&lt;UnsplashPhotoPicker.UnsplashPhoto&gt; in UnsplashPhotoPicker.UnsplashPhotoPickerViewController.(doneBarButtonTapped in _076DE604DE71699B94A420F45A9DBE97)(sender: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "UnsplashPhotoPicker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/isisramirez/Code/Till/Pods/UnsplashPhotoPicker/UnsplashPhotoPicker/UnsplashPhotoPicker/Classes/Controllers/UnsplashPhotoPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "272">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61A2D2AF-F539-4F06-8C5F-8ADD302F9811"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Countdowns/TodayViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79BC7C13-1C4A-4F36-9F61-77198AA9095A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Countdowns/TodayViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
