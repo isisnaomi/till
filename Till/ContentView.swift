@@ -21,6 +21,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
+                
+            /// This is a quick fix for a bug presented in iOS 14
+            /// https://developer.apple.com/forums/thread/652080
+            Text("\(self.presented_obj?.name ?? "")").hidden()
 
             ScrollView {
                 if self.events.count != 0 {
@@ -38,14 +42,14 @@ struct ContentView: View {
                                         }
                                     }
                                 }
-                            }.gesture(
-                                TapGesture()
-                                    .onEnded { _ in
-                                        self.showingPreview.toggle()
-                                        self.presented_obj = box
-                                }
-                            ).sheet(isPresented: self.$showingPreview) {
-                                EventView(box: self.presented_obj!).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+                            }.onTapGesture {
+                                self.showingPreview.toggle()
+                                self.presented_obj = box
+                            }
+                            .sheet(isPresented: self.$showingPreview) {
+                                EventView(box: self._presented_obj.wrappedValue!)
+                                    .environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate)
+                                    .persistentContainer.viewContext)
                             }.onReceive(self.didSave) { _ in
                                 self.refreshing = UUID()
                             }
