@@ -67,9 +67,11 @@ struct EditView: View {
                         .edgesIgnoringSafeArea(.all)
                         .frame(maxWidth: geometry.size.width,
                                maxHeight: geometry.size.height)
-                    Color.black.opacity(0.4).cornerRadius(10)
                 }
             }
+            
+            Color.black.opacity(0.4).cornerRadius(10).edgesIgnoringSafeArea(.all)
+            
             VStack {
                 TextField("Add a title", text: $name)
                     .font(.largeTitle)
@@ -122,7 +124,9 @@ struct EditView: View {
                         Image.init(systemName: "camera").foregroundColor(.primary)
                         Text("Add an image").foregroundColor(.primary)
                     }
-                }
+                }.padding()
+                
+                // Add from Unsplash
                 Button(action: {
                     withAnimation {
                         self.showUnsplashPicker.toggle()
@@ -133,6 +137,7 @@ struct EditView: View {
                         Text("Add image from Unsplash").foregroundColor(.primary)
                     }
                 }
+
                 //Submit
                 Button(action:  {
                     self.managedObjectContext.performAndWait {
