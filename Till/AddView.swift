@@ -118,7 +118,9 @@ struct AddView: View {
                             Image.init(systemName: "camera").foregroundColor(.primary)
                             Text("Add an image").foregroundColor(.primary)
                         }
-                    }
+                    }.padding()
+                    
+                    // Add from Unsplash
                     Button(action: {
                         withAnimation {
                             self.showUnsplashPicker.toggle()

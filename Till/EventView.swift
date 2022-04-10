@@ -58,9 +58,12 @@ struct EventView: View {
                         self.showingEdit.toggle()
                     }) {
                         Image("iconEdit")
+                            .renderingMode(.template)
                             .resizable()
-                            .foregroundColor(.white)
                             .frame(width: 30, height: 30, alignment: .center)
+                            .colorMultiply(.white)
+                            .foregroundColor(.white)
+                            .padding()
                     }
                     Button(action: {
                         self.showingAlert = !InstagramManager().postImageToInstagramWithCaption(imageInstagram: self.image, event: self.box!, view: UIView())
