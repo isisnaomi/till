@@ -42,7 +42,7 @@ struct  UnsplashGallary: UIViewControllerRepresentable {
         
         
         func downloadPhoto(_ photo: UnsplashPhoto,  completion: @escaping (Bool) -> Void)  {
-            guard let url = photo.urls[.small] else {
+            guard let url = photo.urls[.full] else {
                 completion(false)
                 return
             }
